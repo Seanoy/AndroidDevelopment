@@ -6,3 +6,9 @@
 5	    res/layout:这个目录存放用于定义用户界面的文件。
 6	    res/values:这个目录存放各种各样的包含一系列资源的XML文件，比如字符串和颜色的定义。
 7	    AndroidManifest.xml:这个是应用程序的清单文件，描述了应用程序的基础特性，定义它的各种组件。
+
+
+ImageView imageView = (ImageView) findViewById(R.id.myimageview);
+imageView.setImageResource(R.drawable.myimage);
+第一行代码用 R.id.myimageview 来在布局文件中获取定义为 myimageview 的 ImageView。
+第二行用 R.drawable.myimage 来获取在 res/ 的 drawable 子目录下名为 myimage 的图片。

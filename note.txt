@@ -72,3 +72,27 @@ getType():该方法为给定的URI返回元数据类型。
 
 
 
+创建碎片
+onAttach(): 碎片实例被关联到活动实例。碎片和活动还没有完全初始化。通常，你在该方法中获取到活动的引用，在碎片将来的初始化工作中被使用。
+onCreate(): 当创建碎片时，系统调用该方法。你需要初始化一些碎片的必要组件。这些组件是当碎片被暂停、停止时需要保留的，以便被恢复。
+onCreateView(): 当碎片将要第一次绘制它的用户界面时系统调用该方法。为了绘制碎片的UI，你需要从该方法中返回一个代表碎片根布局的View组件。如果该碎片不提供用户界面，直接返回null。
+onActivityCreated: 当宿主活动被创建，在onCreateView()方法之后调用该方法。活动和碎片实例与活动的视图层级被创建。这时，视图可以通过findViewById()方法来访问。在这个方法中，你可以实例化需要Context对象的对象。
+onStart(): 碎片可见时调用该方法。
+onResume(): 碎片可交互时调用该方法。
+onPause(): 当首次表明用户将要离开碎片时系统调用该方法。通常，这里你需要提交任何的会超出用户会话的持久化的变化。
+onStop(): 碎片将要被停止时调用。
+onDestroyView(): 调用该方法后，碎片将要被销毁。
+onDestroy(): 该方法被用来清理碎片的状态。但在Android平台并不保证一定被调用。
+
+
+意图过滤器
+序号	方法和描述
+1	Context.startActivity():意图传递给该方法，用于启动一个新的活动或者让已存在的活动做一些新的事情。
+2	Context.startService():意图传递给该方法，将初始化一个服务，或者新的信息到一个持续存在的服务。
+3	Context.sendBroadcast():意图传递给该方法，信息将传递到所有对此感兴趣的广播接收器。
+
+步骤	描述
+1	使用 Android Studio IDE 创建 Android 应用程序，并命名为Intent filter，包名为 cn.uprogrammer.intentfilter。当创建项目时，确保目标 SDK 和用最新版本的 Android SDK 进行编译使用高级的API。
+2	修改src/cn.uprogrammer.intentfilter/MainActivity.java文件，并添加代码定义两个监听器来对应两个按钮"启动浏览器"和"启动电话"
+3	修改res/layout/activity_main.xml布局文件，在线性布局中添加3个按钮。
+4	启动Android模拟器来运行应用程序，并验证应用程序所做改变的结果。
